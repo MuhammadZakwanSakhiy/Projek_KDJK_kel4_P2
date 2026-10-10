@@ -15,3 +15,7 @@ Kebutuhan sistem :
 6. RAM
 7. CPU 2 Core
 
+
+```
+test
+```
