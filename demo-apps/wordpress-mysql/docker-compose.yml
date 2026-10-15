@@ -1,0 +1,42 @@
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: demo_wordpress_db
+    restart: unless-stopped
+    command: '--default-authentication-plugin=mysql_native_password'
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-rootsecret123}
+      MYSQL_DATABASE: ${MYSQL_DATABASE:-wordpress}
+      MYSQL_USER: ${MYSQL_USER:-wp_user}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD:-wp_password123}
+    volumes:
+      - mysql_data:/var/lib/mysql
+    networks:
+      - wp_net
+
+  wordpress:
+    image: wordpress:latest
+    container_name: demo_wordpress_app
+    restart: unless-stopped
+    depends_on:
+      - mysql
+    ports:
+      - "8080:80"
+    environment:
+      WORDPRESS_DB_HOST: mysql:3306
+      WORDPRESS_DB_NAME: ${MYSQL_DATABASE:-wordpress}
+      WORDPRESS_DB_USER: ${MYSQL_USER:-wp_user}
+      WORDPRESS_DB_PASSWORD: ${MYSQL_PASSWORD:-wp_password123}
+      WORDPRESS_TABLE_PREFIX: wp_
+    volumes:
+      - wordpress_data:/var/www/html
+    networks:
+      - wp_net
+
+volumes:
+  mysql_data:
+  wordpress_data:
+
+networks:
+  wp_net:
+    driver: bridge
