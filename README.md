@@ -1,13 +1,8 @@
-<h1 align="center">
-  <img src="https://coolify.io/images/coolify-transparent.png" alt="Coolify Logo" width="220"><br>
-  Laporan Projek Akhir KDJK - Kelompok 4 Paralel 2<br>
-  Self-Hosting PaaS Coolify Berbasis Ubuntu VM Terbuka Publik via Cloudflare Tunnel
-</h1>
+# Projek_KDJK_kel4_P2
+Aplikasi PaaS Coolify
 
 <p align="center">
-  <b>Aplikasi Inti:</b> Coolify v4 (PaaS) &nbsp;|&nbsp;
-  <b>Demo Apps:</b> Grafana &amp; WordPress-MySQL &nbsp;|&nbsp;
-  <b>Akses Publik:</b> Cloudflare Tunnel (QUIC / HTTPS)
+  <img src="https://coolify.io/images/coolify-transparent.png" alt="Coolify Logo" width="200">
 </p>
 
 <p align="center">
