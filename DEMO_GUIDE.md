@@ -18,9 +18,9 @@ Dokumen ini disusun sebagai panduan praktis dan skenario demonstrasi langsung (*
   sudo systemctl status cloudflared
   ```
 - [ ] **Uji Coba Akses Domain Publik via Smartphone / Laptop Luar**:
-  - `https://coolify.<domain-anda>`
-  - `https://grafana.<domain-anda>`
-  - `https://wordpress.<domain-anda>`
+  - `https://coolify.example.com`
+  - `https://grafana.example.com`
+  - `https://wordpress.example.com`
   - *Pastikan gembok hijau HTTPS aktif tanpa peringatan sertifikat SSL.*
 
 ---
@@ -43,7 +43,7 @@ flowchart LR
 
 ### Menit 03–04: Demo Dashboard Coolify (PaaS Core)
 - **Aksi yang Ditampilkan:**
-  1. Buka browser dan buka `https://coolify.<domain-anda>`.
+  1. Buka browser dan buka `https://coolify.example.com`.
   2. Tunjukkan menu **Servers** > **localhost**:
      - Status Docker Engine aktif.
      - Reverse Proxy Traefik berjalan untuk merutekan subdomain secara otomatis.
@@ -51,14 +51,14 @@ flowchart LR
 
 ### Menit 05–06: Demo Aplikasi 1 — Grafana (Observabilitas & Metrik)
 - **Aksi yang Ditampilkan:**
-  1. Buka tab baru: `https://grafana.<domain-anda>`.
+  1. Buka tab baru: `https://grafana.example.com`.
   2. Login dengan akun demo: `admin` / `adminpassword123`.
   3. Buka dashboard metrik yang sudah disiapkan.
   4. Tunjukkan bahwa Grafana berjalan di dalam kontainer terisolasi yang di-deploy dan dimonitor langsung oleh Coolify.
 
 ### Menit 07–08: Demo Aplikasi 2 — WordPress + MySQL (Aplikasi Web Multi-Tier)
 - **Aksi yang Ditampilkan:**
-  1. Buka tab baru: `https://wordpress.<domain-anda>`.
+  1. Buka tab baru: `https://wordpress.example.com`.
   2. Tunjukkan halaman beranda WordPress yang sudah berisi artikel nyata (bukan kosongan), tema visual yang rapi, dan judul situs kelompok.
   3. Masuk ke halaman admin (`/wp-admin`):
      - Tunjukkan bahwa data artikel tersimpan secara persisten di kontainer MySQL.

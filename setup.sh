@@ -63,7 +63,7 @@ usage() {
 Penggunaan: sudo bash setup.sh [OPSI]
 
 Opsi:
-  -d, --domain <DOMAIN>       Domain utama untuk instalasi (contoh: kel4-kdjk.my.id)
+  -d, --domain <DOMAIN>       Domain utama untuk instalasi (contoh: example.com)
   -t, --token <TOKEN>         Cloudflare Tunnel Token (Zero Trust tunnel connector)
   -q, --quick-tunnel          Gunakan Cloudflare Quick Tunnel (tanpa butuh domain/token sendiri)
   -y, --yes, --non-interactive
@@ -199,7 +199,7 @@ prompt_user_inputs() {
     # Domain Prompt
     if [[ -z "$DOMAIN" ]]; then
         echo -e "Masukkan Base Domain publik Anda yang telah terdaftar di Cloudflare."
-        echo -e "Contoh: ${C_YELLOW}kel4-kdjk.my.id${C_RESET} atau ${C_YELLOW}example.com${C_RESET}"
+        echo -e "Contoh: ${C_YELLOW}example.com${C_RESET} atau ${C_YELLOW}coolify.example.com${C_RESET}"
         read -r -p "Base Domain [kosongkan jika hanya ingin mencoba Quick Tunnel]: " input_domain
         if [[ -n "$input_domain" ]]; then
             DOMAIN="$input_domain"

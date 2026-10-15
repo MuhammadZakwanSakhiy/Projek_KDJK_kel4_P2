@@ -164,10 +164,10 @@ Terdapat dua pendekatan utama dalam menghubungkan VM lokal ke domain publik:
    ```
 5. Buka tab **Public Hostname** di Cloudflare Dashboard untuk memetakan subdomain ke layanan lokal:
    - **Coolify Dashboard:**
-     - Subdomain: `coolify` | Domain: `domainanda.com`
+     - Subdomain: `coolify` | Domain: `example.com`
      - Service Type: `HTTP` | URL: `localhost:8000`
    - **Reverse Proxy Traefik (Untuk Aplikasi Demo Coolify):**
-     - Subdomain: `*` (Wildcard) atau spesifik `grafana` & `wordpress` | Domain: `domainanda.com`
+     - Subdomain: `*` (Wildcard) atau spesifik `grafana` & `wordpress` | Domain: `example.com`
      - Service Type: `HTTP` | URL: `localhost:80`
      - *Additional settings*: Aktifkan `No TLS Verify` jika menggunakan HTTPS internal.
 
@@ -189,21 +189,21 @@ tunnel: <UUID-TUNNEL-ANDA>
 credentials-file: /root/.cloudflared/<UUID-TUNNEL-ANDA>.json
 
 ingress:
-  - hostname: coolify.domainanda.com
+  - hostname: coolify.example.com
     service: http://localhost:8000
-  - hostname: grafana.domainanda.com
+  - hostname: grafana.example.com
     service: http://localhost:80
-  - hostname: wordpress.domainanda.com
+  - hostname: wordpress.example.com
     service: http://localhost:80
-  - hostname: "*.domainanda.com"
+  - hostname: "*.example.com"
     service: http://localhost:80
   - service: http_status:404
 ```
 Arahkan DNS di Cloudflare:
 ```bash
-cloudflared tunnel route dns kdjk-tunnel coolify.domainanda.com
-cloudflared tunnel route dns kdjk-tunnel grafana.domainanda.com
-cloudflared tunnel route dns kdjk-tunnel wordpress.domainanda.com
+cloudflared tunnel route dns kdjk-tunnel coolify.example.com
+cloudflared tunnel route dns kdjk-tunnel grafana.example.com
+cloudflared tunnel route dns kdjk-tunnel wordpress.example.com
 ```
 Jalankan service:
 ```bash
@@ -214,9 +214,9 @@ sudo systemctl enable --now cloudflared
 ---
 
 ### 2. Konfigurasi Root Domain & Traefik di Coolify
-1. Buka dashboard Coolify pada browser: `https://coolify.domainanda.com` atau `http://<IP-LOKAL-VM>:8000`.
+1. Buka dashboard Coolify pada browser: `https://coolify.example.com` atau `http://<IP-LOKAL-VM>:8000`.
 2. Masuk ke menu **Settings** > **Instance Settings**:
-   - Isi **Instance Domain** dengan: `https://coolify.domainanda.com`
+   - Isi **Instance Domain** dengan: `https://coolify.example.com`
    - Simpan perubahan.
 3. Masuk ke menu **Servers** > **localhost**:
    - Pastikan status proxy (**Traefik**) bernilai `Running` pada port 80 dan 443.
@@ -363,7 +363,7 @@ sudo bash backup.sh
 [`^ kembali ke atas ^`](#)
 
 ### 1. Registrasi Akun Administrator Awal
-1. Buka browser dan akses URL dashboard Coolify Anda (misal: `https://coolify.domainanda.com` atau `http://<IP-VM>:8000`).
+1. Buka browser dan akses URL dashboard Coolify Anda (misal: `https://coolify.example.com` atau `http://<IP-VM>:8000`).
 2. Masukkan nama lengkap, email, dan kata sandi baru untuk akun **Root Administrator**.
 3. Di halaman onboarding, pilih **Localhost** sebagai target server deployment Docker.
 
@@ -379,7 +379,7 @@ Grafana digunakan untuk mendemonstrasikan visualisasi data server pada Coolify.
 3. Cari dan pilih **Grafana** (atau pilih *Docker Compose* dan gunakan berkas di [`demo-apps/grafana/docker-compose.yml`](demo-apps/grafana/docker-compose.yml)).
 4. Pada kolom **Domains**, tentukan URL publik aplikasi:
    ```
-   https://grafana.domainanda.com
+   https://grafana.example.com
    ```
 5. Pada bagian *Environment Variables*, tentukan kredensial login:
    ```env
@@ -387,7 +387,7 @@ Grafana digunakan untuk mendemonstrasikan visualisasi data server pada Coolify.
    GF_SECURITY_ADMIN_PASSWORD=adminpassword123
    ```
 6. Klik tombol **Deploy**. Coolify secara otomatis akan mengunduh image `grafana/grafana:latest`, menyusun volume data, dan mengonfigurasi rute Traefik.
-7. Akses `https://grafana.domainanda.com` pada browser.
+7. Akses `https://grafana.example.com` pada browser.
 8. Login dengan `admin` / `adminpassword123`.
 9. **Isi Konten / Data Real**:
    - Masuk ke menu **Connections** > **Data Sources** > Tambahkan **TestData DB** atau **Prometheus**.
@@ -404,7 +404,7 @@ WordPress mendemonstrasikan integrasi kontainer aplikasi web (*frontend/backend*
 2. Pilih **WordPress with MySQL** (atau gunakan template di [`demo-apps/wordpress-mysql/docker-compose.yml`](demo-apps/wordpress-mysql/docker-compose.yml)).
 3. Atur konfigurasi domain WordPress:
    ```
-   https://wordpress.domainanda.com
+   https://wordpress.example.com
    ```
 4. Variabel lingkungan otomatis terkonfigurasi pada Coolify:
    - `WORDPRESS_DB_HOST`: `mysql:3306`
@@ -413,7 +413,7 @@ WordPress mendemonstrasikan integrasi kontainer aplikasi web (*frontend/backend*
    - `WORDPRESS_DB_PASSWORD`: `wp_password123`
    - `MYSQL_ROOT_PASSWORD`: `rootsecret123`
 5. Klik **Deploy**.
-6. Setelah status kontainer berubah menjadi **Healthy (Green)**, kunjungi `https://wordpress.domainanda.com`.
+6. Setelah status kontainer berubah menjadi **Healthy (Green)**, kunjungi `https://wordpress.example.com`.
 7. **Isi Konten / Data Real**:
    - Pilih bahasa: **Bahasa Indonesia**.
    - Masukkan judul situs: **Portal Self-Hosting KDJK - Kelompok 4**.
@@ -428,9 +428,9 @@ WordPress mendemonstrasikan integrasi kontainer aplikasi web (*frontend/backend*
 2. Periksa sertifikat SSL pada bilah peramban: Sertifikat terverifikasi valid dikeluarkan oleh **Cloudflare Inc ECC CA-3** dengan enkripsi TLS 1.3.
 3. Jalankan tes *cURL* untuk memeriksa header:
    ```bash
-   curl -I https://coolify.domainanda.com
-   curl -I https://grafana.domainanda.com
-   curl -I https://wordpress.domainanda.com
+   curl -I https://coolify.example.com
+   curl -I https://grafana.example.com
+   curl -I https://wordpress.example.com
    ```
    Output menunjukkan status `HTTP/2 200` atau `HTTP/1.1 200 OK` dengan header `server: cloudflare`.
 
