@@ -2,7 +2,7 @@
 Aplikasi PaaS Coolify
 
 <p align="center">
-  <img src="https://coolify.io/images/coolify-transparent.png" alt="Coolify Logo" width="200">
+  <img src="coolify-logo.svg" alt="Coolify Logo" width="140">
 </p>
 
 <p align="center">
