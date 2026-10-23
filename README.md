@@ -451,16 +451,18 @@ WordPress mendemonstrasikan integrasi kontainer aplikasi web (*frontend/backend*
 ### Analisis Kelebihan & Kekurangan Coolify
 
 #### Kelebihan:
-1. **Bebas Vendor Lock-in**: Pengguna memiliki kendali penuh atas kode, basis data, dan konfigurasi server tanpa batasan kuota gratis seperti yang diterapkan oleh Heroku atau Vercel.
-2. **Katalog Aplikasi 1-Klik yang Luas**: Menyediakan lebih dari 280+ template layanan siap pasang (WordPress, Grafana, PostgreSQL, Nextcloud, Ghost, dll.).
-3. **Mendukung Multi-Server & Multi-Arsitektur**: Satu dashboard Coolify dapat mengontrol beberapa server sekaligus (lokal, VPS Hetzner, AWS EC2) melalui protokol SSH.
-4. **Git Integration & Auto Deploy**: Mampu terhubung dengan repositori GitHub/GitLab untuk *continuous deployment* (CD) otomatis berbasis webhook saat ada *git push*.
-5. **Reverse Proxy Terintegrasi**: Menggunakan Traefik secara otomatis untuk menangani routing subdomain tanpa perlu mengedit berkas Nginx virtual host secara manual.
+1. Open-source dan gratis untuk versi self-hosted.
+2. Deployment lebih mudah melalui dashboard web.
+3. Mendukung banyak aplikasi dan database berbasis Docker.
+4. Otomatisasi deployment melalui integrasi Git dan webhook.
+5. Kontrol penuh terhadap server dan data karena menggunakan infrastruktur sendiri.
 
 #### Kekurangan:
-1. **Konsumsi Sumber Daya Cukup Tinggi**: Dibandingkan solusi minimalis berbasis CLI seperti Dokku, Coolify memerlukan RAM minimal 2GB–4GB karena menjalankan backend Laravel, Redis, PostgreSQL, dan antarmuka Vue/Svelte.
-2. **Ketergantungan pada Daemon Docker**: Jika daemon Docker mengalami *crash* atau *out-of-memory* (OOM), dashboard Coolify beserta seluruh aplikasi yang berjalan di atasnya akan terpengaruh.
-3. **Kurva Pembelajaran Jaringan**: Pengguna pemula mungkin membutuhkan pemahaman dasar mengenai Docker networks dan reverse proxy ketika mengatasi masalah komunikasi antar-kontainer kustom.
+1. Memerlukan server sendiri dengan resource yang memadai.
+2. Konfigurasi awal cukup teknis, terutama jaringan, Docker, dan domain.
+3. Pemeliharaan mandiri, termasuk keamanan, pembaruan, dan backup.
+4. Bergantung pada infrastruktur server yang digunakan.
+5. Troubleshooting tetap membutuhkan pemahaman teknis mengenai container dan jaringan.
 
 ---
 
