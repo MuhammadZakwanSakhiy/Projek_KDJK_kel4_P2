@@ -17,9 +17,18 @@ Aplikasi PaaS Coolify
 </p>
 
 ---
+## Anggota Kelompok
+
+| No. | Nama | NIM |
+|---:|---|---|
+| 1 | **Hauzan Ziyadatul Khoir** | M0403241002 |
+| 2 | **Muhammad Zakwan Sakhiy** | M0403241057 |
+| 3 | **Harya Bagus Prayoga** | M0403241066 |
+| 4 | **Azra Aslam Khoiri** | M0403241148 |
+| 5 | **Afdha Auliya Atiq** | M0403241163 |
 
 # Sekilas Tentang
-[`^ kembali ke atas ^`](#)
+[`^ kembali ke atas ^`](#Projek_KDJK_kel4_P2)
 
 **Coolify** adalah platform *Platform-as-a-Service* (PaaS) *open-source* dan mandiri (*self-hosted*) yang dirancang sebagai alternatif independen terhadap layanan cloud komersial seperti Heroku, Vercel, Netlify, atau Render. Coolify memungkinkan pengembang untuk mengelola siklus hidup aplikasi web, basis data terkelola, manajemen kontainer Docker, hingga konfigurasi *reverse proxy* secara terpusat melalui antarmuka web modern yang intuitif.
 
@@ -74,7 +83,7 @@ Sebagai pembuktian fungsi PaaS, pada instance Coolify ini di-deploy dua aplikasi
 ---
 
 # Instalasi
-[`^ kembali ke atas ^`](#)
+[`^ kembali ke atas ^`](#Projek_KDJK_kel4_P2)
 
 ### Kebutuhan Sistem
 
@@ -148,7 +157,7 @@ rm cloudflared.deb
 ---
 
 # Konfigurasi
-[`^ kembali ke atas ^`](#)
+[`^ kembali ke atas ^`](#Projek_KDJK_kel4_P2)
 
 ### 1. Konfigurasi Akses Publik via Cloudflare Tunnel
 
@@ -225,7 +234,7 @@ sudo systemctl enable --now cloudflared
 ---
 
 # Maintenance
-[`^ kembali ke atas ^`](#)
+[`^ kembali ke atas ^`](#Projek_KDJK_kel4_P2)
 
 Aplikasi server yang baik memerlukan prosedur pemeliharaan berkala guna memastikan keandalan, keamanan, dan ketersediaan ruang penyimpanan.
 
@@ -290,7 +299,7 @@ sudo journalctl -u cloudflared -f
 ---
 
 # Otomatisasi
-[`^ kembali ke atas ^`](#)
+[`^ kembali ke atas ^`](#Projek_KDJK_kel4_P2)
 
 Untuk memudahkan pengujian dan instalasi tanpa harus mengetik puluhan perintah secara manual, telah disediakan skrip otomatisasi mandiri: [`setup.sh`](setup.sh).
 
@@ -360,7 +369,7 @@ sudo bash backup.sh
 ---
 
 # Cara Pemakaian
-[`^ kembali ke atas ^`](#)
+[`^ kembali ke atas ^`](#Projek_KDJK_kel4_P2)
 
 ### 1. Registrasi Akun Administrator Awal
 1. Buka browser dan akses URL dashboard Coolify Anda (misal: `https://coolify.example.com` atau `http://<IP-VM>:8000`).
@@ -437,7 +446,7 @@ WordPress mendemonstrasikan integrasi kontainer aplikasi web (*frontend/backend*
 ---
 
 # Pembahasan
-[`^ kembali ke atas ^`](#)
+[`^ kembali ke atas ^`](#Projek_KDJK_kel4_P2)
 
 ### Analisis Kelebihan & Kekurangan Coolify
 
@@ -481,7 +490,7 @@ Dibandingkan metode tradisional (*Port Forwarding* pada Router + Dynamic DNS/DDN
 ---
 
 # Referensi
-[`^ kembali ke atas ^`](#)
+[`^ kembali ke atas ^`](#Projek_KDJK_kel4_P2)
 
 1. **Dokumentasi Resmi Coolify** - [https://coolify.io/docs](https://coolify.io/docs)
 2. **Repositori GitHub Coolify v4** - [https://github.com/coollabsio/coolify](https://github.com/coollabsio/coolify)
@@ -490,3 +499,6 @@ Dibandingkan metode tradisional (*Port Forwarding* pada Router + Dynamic DNS/DDN
 5. **Panduan Konfigurasi Grafana Docker** - [https://grafana.com/docs/grafana/latest/setup-grafana/installation/docker/](https://grafana.com/docs/grafana/latest/setup-grafana/installation/docker/)
 6. **Dokumentasi Resmi WordPress Docker Hub** - [https://hub.docker.com/_/wordpress](https://hub.docker.com/_/wordpress)
 7. **Awesome Self-Hosted List** - [https://github.com/awesome-selfhosted/awesome-selfhosted](https://github.com/awesome-selfhosted/awesome-selfhosted)
+8. **Templat Github** - [https://github.com/auriza/komdat-lab/blob/master/templat.md](https://github.com/auriza/komdat-lab/blob/master/templat.md)
+9. **Petunjuk Projek Akhir** - [https://github.com/auriza/komdat-lab/blob/master/projek.md](https://github.com/auriza/komdat-lab/blob/master/projek.md)
+10. **Contoh App Tahun Lalu** - [https://github.com/bunyamin88/Projek_KDJK_kel5_P1/tree/main](https://github.com/bunyamin88/Projek_KDJK_kel5_P1/tree/main)
